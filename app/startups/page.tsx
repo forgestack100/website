@@ -6,7 +6,18 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { CheckCircle, DollarSign, Clock, Shield, Users, Loader2, Check, AlertCircle } from "lucide-react"
+import {
+  CheckCircle,
+  DollarSign,
+  Clock,
+  Shield,
+  Users,
+  Loader2,
+  Check,
+  AlertCircle,
+  ArrowRight,
+  Badge,
+} from "lucide-react"
 import { useState } from "react"
 
 export default function StartupsPage() {
@@ -87,148 +98,219 @@ export default function StartupsPage() {
   return (
     <div className="flex flex-col min-h-screen scroll-smooth">
       {/* Hero Section */}
-      <section className="px-4 py-20 md:py-32">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            Hire Great Developers
-            <span className="block text-primary">Without the Hassle</span>
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-            Access pre-vetted developers who are hungry to contribute to your startup's success. No recruiter fees, no
-            lengthy processes.
-          </p>
-          <Button asChild size="lg" className="text-lg px-8 py-6">
-            <Link href="#contact" className="scroll-smooth">
-              Start Hiring Today
-            </Link>
-          </Button>
+      <section className="relative px-4 py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background pointer-events-none" />
+
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <Badge className="w-fit bg-primary/20 text-primary border-primary/30">For Companies & Startups</Badge>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-pretty">
+                Hire Vetted Developers
+                <span className="block text-primary">Without the Recruiter Fees</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl leading-relaxed">
+                Access Africa's most talented developers and designers. Pre-vetted, ready to work, and aligned with your
+                mission.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button asChild size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
+                <Link href="#contact">
+                  Start Hiring Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="text-lg px-8 py-6 bg-transparent">
+                <Link href="#how-it-works">See How It Works</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Benefits Overview */}
-      <section className="px-4 py-16 bg-muted/30">
+      <section className="px-4 py-20 bg-card/50 border-t border-b">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why Startups Choose Forgestack</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold">Why Companies Choose Forgestack</h2>
+            <p className="text-lg text-muted-foreground mt-4">Cut costs, cut timelines, cut the hassle</p>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <DollarSign className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">No Recruiter Fees</h3>
-                <p className="text-muted-foreground text-sm">
-                  Save thousands on hiring costs. Pay only for the talent you hire.
-                </p>
-              </CardContent>
-            </Card>
+            {[
+              {
+                icon: DollarSign,
+                title: "No Recruiter Fees",
+                description: "Save 20-30% on hiring costs. Only pay for talent you hire, not for the process.",
+              },
+              {
+                icon: Clock,
+                title: "Fast Matching",
+                description: "Get matched with qualified candidates in days, not weeks of traditional recruiting.",
+              },
+              {
+                icon: Shield,
+                title: "Pre-Vetted Talent",
+                description: "Every developer is verified with real assessments and community backing.",
+              },
+              {
+                icon: Users,
+                title: "Direct Access",
+                description: "Interview candidates directly. No middlemen, no gatekeepers, just talent.",
+              },
+            ].map((benefit, idx) => (
+              <Card key={idx} className="border-primary/20 bg-background">
+                <CardContent className="pt-8">
+                  <benefit.icon className="h-10 w-10 text-primary mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
+                  <p className="text-muted-foreground text-sm">{benefit.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <Clock className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Fast Matching</h3>
-                <p className="text-muted-foreground text-sm">
-                  Get matched with qualified candidates in days, not weeks.
-                </p>
-              </CardContent>
-            </Card>
+      <section id="how-it-works" className="px-4 py-20">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold">The Hiring Process</h2>
+            <p className="text-lg text-muted-foreground mt-4">From request to onboarded in 7 days</p>
+          </div>
 
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Pre-vetted Talent</h3>
-                <p className="text-muted-foreground text-sm">
-                  Every developer is verified and supported by our community.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Culture Fit</h3>
-                <p className="text-muted-foreground text-sm">
-                  Find developers who align with your startup's values and mission.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              {
+                step: 1,
+                title: "Submit Request",
+                description: "Tell us about the role, required skills, and timeline.",
+                icon: CheckCircle,
+              },
+              {
+                step: 2,
+                title: "Get Matches",
+                description: "Receive 3-5 pre-vetted developer profiles with portfolios.",
+                icon: Users,
+              },
+              {
+                step: 3,
+                title: "Interview",
+                description: "Schedule and conduct interviews directly with candidates.",
+                icon: Clock,
+              },
+              {
+                step: 4,
+                title: "Onboard",
+                description: "Start working with your selected developer immediately.",
+                icon: CheckCircle,
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="relative">
+                <div className="absolute -top-4 left-6 flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-primary-foreground font-bold text-sm">
+                  {item.step}
+                </div>
+                <Card className="border-primary/20 bg-background pt-12">
+                  <CardContent className="space-y-3">
+                    <item.icon className="h-8 w-8 text-primary" />
+                    <h3 className="text-lg font-semibold">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Features List */}
-      <section className="px-4 py-16">
-        <div className="container mx-auto max-w-4xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Everything You Need to Hire Smart</h2>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="font-semibold">Skill-based Matching</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Find developers with the exact technical skills your project needs.
-                    </p>
-                  </div>
-                </div>
+      <section className="px-4 py-20 bg-card/30">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">What You Get</h2>
 
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="font-semibold">Portfolio Reviews</h3>
-                    <p className="text-muted-foreground text-sm">
-                      See real projects and code samples before making contact.
-                    </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "Verified Skills Portfolio",
+                description: "Review developer portfolios backed by real skill assessments and project history.",
+              },
+              {
+                title: "Transparent Pricing",
+                description: "No hidden fees. Simple, straightforward pricing with no recruiter commissions.",
+              },
+              {
+                title: "Flexible Arrangements",
+                description: "Full-time, part-time, contract, or project-based work options to fit your needs.",
+              },
+              {
+                title: "Community Support",
+                description: "Developers are backed by our mentorship network and community, ensuring quality.",
+              },
+              {
+                title: "Performance Tracking",
+                description: "Transparent communication and collaboration tools to track progress.",
+              },
+              {
+                title: "Scalable Hiring",
+                description: "Hire one developer or a whole team. We scale with your growth needs.",
+              },
+            ].map((feature, idx) => (
+              <Card key={idx} className="border-primary/20 bg-background">
+                <CardContent className="pt-8">
+                  <div className="w-10 h-10 rounded-lg bg-primary/20 text-primary font-bold flex items-center justify-center mb-4">
+                    ✓
                   </div>
-                </div>
+                  <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="font-semibold">Direct Communication</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Talk directly with candidates without middlemen or gatekeepers.
-                    </p>
+      {/* Success Stories */}
+      <section className="px-4 py-20">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">Success Stories</h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                quote: "We found our entire frontend team through Forgestack. Quality is exceptional.",
+                author: "Sarah Chen",
+                role: "CTO, TechFlow",
+                icon: "SC",
+              },
+              {
+                quote: "Saved 25% on hiring costs and found talent faster than traditional recruiting.",
+                author: "Marcus O.",
+                role: "Founder, StartupXYZ",
+                icon: "MO",
+              },
+              {
+                quote: "The developers are not just skilled, they're genuinely invested in our mission.",
+                author: "Amara K.",
+                role: "CEO, Design House",
+                icon: "AK",
+              },
+            ].map((testimonial, idx) => (
+              <Card key={idx} className="border-primary/20 bg-background">
+                <CardContent className="pt-8">
+                  <p className="text-muted-foreground mb-6 italic">"{testimonial.quote}"</p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                      <span className="text-sm font-semibold text-primary">{testimonial.icon}</span>
+                    </div>
+                    <div>
+                      <p className="font-semibold">{testimonial.author}</p>
+                      <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                    </div>
                   </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="font-semibold">Community Backing</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Developers come with community support and ongoing mentorship.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="font-semibold">Flexible Arrangements</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Full-time, part-time, contract, or project-based work options.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-muted/30 p-8 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4">Success Story</h3>
-              <blockquote className="text-muted-foreground italic mb-4">
-                "We hired our entire frontend team through Forgestack. The developers were not only skilled but also
-                genuinely excited about our mission. Best hiring decision we've made."
-              </blockquote>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-semibold">SC</span>
-                </div>
-                <div>
-                  <p className="font-semibold">Sarah Chen</p>
-                  <p className="text-sm text-muted-foreground">CTO, TechFlow</p>
-                </div>
-              </div>
-            </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

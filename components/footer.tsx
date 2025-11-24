@@ -9,8 +9,12 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
-              <img src="/images/audio-icon.png" alt="Forgestack Logo" className="h-8 w-8" />
-              <span className="font-bold text-xl">Forgestack</span>
+              <img
+                src="/images/forgestack-logo.png"
+                alt="Forgestack Logo"
+                className="h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 transition-all duration-300 hover:scale-105"
+              />
+              <span className="font-bold text-2xl text-[#00B450]">Forgestack</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Connecting developers with opportunities, building community, breaking down barriers.

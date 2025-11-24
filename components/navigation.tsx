@@ -26,8 +26,12 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <img src="/images/audio-icon.png" alt="Forgestack Logo" className="h-8 w-8" />
-            <span className="font-bold text-xl">Forgestack</span>
+            <img
+              src="/images/forgestack-logo.png"
+              alt="Forgestack Logo"
+              className="h-12 w-12 sm:h-16 sm:w-16 md:h-24 md:w-24 transition-all duration-300 hover:scale-105"
+            />
+            <span className="font-bold text-2xl sm:text-2xl md:text-3xl text-[#00B450]">Forgestack</span>
           </Link>
 
           {/* Desktop Navigation */}
