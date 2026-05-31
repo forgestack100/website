@@ -51,6 +51,12 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        // Deprecated Tailwind color mappings for shadcn/ui compatibility
+        sky: "hsl(198, 93%, 60%)",
+        stone: "hsl(0, 0%, 60%)",
+        neutral: "hsl(0, 0%, 52%)",
+        gray: "hsl(220, 8.9%, 46.1%)",
+        slate: "hsl(215, 28%, 17%)",
       },
       borderRadius: {
         lg: "var(--radius)",
