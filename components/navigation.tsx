@@ -30,7 +30,7 @@ export function Navigation() {
               alt="Forgestack Logo"
               className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 transition-all duration-300 hover:scale-105"
             />
-            <span className="font-bold text-lg sm:text-xl md:text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hidden sm:inline">Forgestack</span>
+            <span className="font-bold text-lg sm:text-xl md:text-2xl text-[#00B450] hidden sm:inline">Forgestack</span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">

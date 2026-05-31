@@ -4,60 +4,60 @@
 
 @layer base {
   :root {
-    /* Premium SaaS palette: Electric Blue (#2D8CFF) to Purple (#8A4DFF) gradient, dark navy backgrounds */
+    /* Updated to match Forgestack brand palette: Vivid Green, Fresh Lime, Jet Black, white */
     --background: 0 0% 100%;
-    --foreground: 220 13% 20%;
+    --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
-    --card-foreground: 220 13% 20%;
+    --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 20%;
-    --primary: 217 100% 57%; /* Electric Blue #2D8CFF */
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 155 100% 33%; /* Vivid Green #00B450 */
     --primary-foreground: 0 0% 100%;
-    --secondary: 270 100% 60%; /* Purple #8A4DFF */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 100 71% 52%; /* Fresh Lime #98EF50 */
+    --secondary-foreground: 240 10% 3.9%;
     --muted: 220 13% 91%;
     --muted-foreground: 220 8.9% 46.1%;
-    --accent: 217 100% 57%; /* Electric Blue accent */
+    --accent: 155 100% 33%; /* Vivid Green accent */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 217 100% 57%;
+    --ring: 155 100% 33%;
     --radius: 0.75rem;
-    --chart-1: 217 100% 57%;
-    --chart-2: 270 100% 60%;
-    --chart-3: 220 13% 91%;
-    --chart-4: 0 0% 0%;
-    --chart-5: 217 100% 50%;
+    --chart-1: 155 100% 33%;
+    --chart-2: 100 71% 52%;
+    --chart-3: 0 0% 0%;
+    --chart-4: 0 0% 98%;
+    --chart-5: 155 90% 28%;
   }
 
   .dark {
-    /* Dark mode: Navy background (#060B23, #161A2E), bright blue/purple accents */
-    --background: 220 43% 11%; /* Dark Navy #060B23 */
-    --foreground: 0 0% 98%;
-    --card: 220 35% 13%; /* Slightly lighter navy #161A2E */
-    --card-foreground: 0 0% 98%;
-    --popover: 220 43% 11%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 217 100% 62%; /* Bright Electric Blue */
-    --primary-foreground: 220 43% 11%;
-    --secondary: 270 100% 65%; /* Bright Purple */
-    --secondary-foreground: 220 43% 11%;
-    --muted: 220 20% 35%;
+    /* Dark mode palette: Jet Black background, Vivid Green accents */
+    --background: 0 0% 13%; /* Jet Black */
+    --foreground: 0 0% 100%;
+    --card: 0 0% 20%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 13%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 155 100% 40%; /* Bright Vivid Green */
+    --primary-foreground: 0 0% 13%;
+    --secondary: 100 71% 60%; /* Fresh Lime bright */
+    --secondary-foreground: 0 0% 13%;
+    --muted: 0 0% 30%;
     --muted-foreground: 0 0% 70%;
-    --accent: 217 100% 62%;
-    --accent-foreground: 220 43% 11%;
+    --accent: 155 100% 40%;
+    --accent-foreground: 0 0% 13%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 20% 25%;
-    --input: 220 20% 25%;
-    --ring: 217 100% 62%;
-    --chart-1: 217 100% 62%;
-    --chart-2: 270 100% 65%;
-    --chart-3: 0 0% 98%;
-    --chart-4: 220 43% 11%;
-    --chart-5: 217 100% 55%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 155 100% 40%;
+    --chart-1: 155 100% 40%;
+    --chart-2: 100 71% 60%;
+    --chart-3: 0 0% 100%;
+    --chart-4: 0 0% 13%;
+    --chart-5: 155 90% 35%;
   }
 }
 
